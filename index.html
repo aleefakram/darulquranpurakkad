@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darul Qur'an Purakkad - Residential Qur'an Learning School</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Configure Tailwind for custom theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#064E3B', // Deep Emerald Green
+                        'secondary': '#D97706', // Gold/Amber Accent
+                        'accent-light': '#FCD34D', // Light Amber
+                        'background-light': '#FDFCF5', // Warm Cream
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Import Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for elegance and mobile optimization */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f9fafb;
+        }
+        .container-padding {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+            .container-padding {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: theme('colors.primary');
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: theme('colors.secondary');
+            border-radius: 9999px;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.95), rgba(0, 0, 0, 0.7)), 
+                        url('https://placehold.co/1200x800/064E3B/ffffff?text=Qur\'an+Learning+Background');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container-padding flex justify-between items-center h-20">
+            <!-- Logo/Institution Name -->
+            <a href="#" class="flex items-center space-x-2 text-xl font-bold font-serif text-primary">
+                <i class="fa-solid fa-mosque text-secondary text-3xl"></i>
+                <span>Darul Qur'an Purakkad</span>
+            </a>
+            
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="lg:hidden p-2 text-primary focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex space-x-8 text-lg font-medium">
+                <a href="#about" class="text-primary hover:text-secondary transition duration-300">About</a>
+                <a href="#curriculum" class="text-primary hover:text-secondary transition duration-300">Curriculum</a>
+                <a href="#residential" class="text-primary hover:text-secondary transition duration-300">Residential Life</a>
+                <a href="#admissions" class="text-primary hover:text-secondary transition duration-300">Admissions</a>
+                <a href="#contact" class="px-4 py-2 bg-secondary text-white rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">Contact Us</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-xl py-4 absolute w-full">
+            <nav class="flex flex-col space-y-4 text-center text-lg font-medium">
+                <a href="#about" class="text-primary hover:bg-gray-100 py-2 transition duration-300">About</a>
+                <a href="#curriculum" class="text-primary hover:bg-gray-100 py-2 transition duration-300">Curriculum</a>
+                <a href="#residential" class="text-primary hover:bg-gray-100 py-2 transition duration-300">Residential Life</a>
+                <a href="#admissions" class="text-primary hover:bg-gray-100 py-2 transition duration-300">Admissions</a>
+                <a href="#contact" class="px-4 py-2 bg-secondary text-white rounded-md mx-4 mt-2 hover:bg-opacity-90 transition duration-300">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white py-20 lg:py-32">
+            <div class="container-padding text-center">
+                <h1 class="text-4xl lg:text-6xl font-extrabold font-serif leading-tight mb-4">
+                    Nurturing Hearts, Enlightening Minds
+                </h1>
+                <p class="text-xl lg:text-2xl font-light mb-8 max-w-3xl mx-auto">
+                    A dedicated residential school offering comprehensive Qur'an learning and modern education for children aged 5 to 15.
+                </p>
+                <div class="space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#admissions" class="inline-block px-8 py-3 bg-secondary text-white text-lg font-semibold rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg transform hover:scale-105">
+                        Enroll Today
+                    </a>
+                    <a href="#about" class="inline-block px-8 py-3 bg-white text-primary text-lg font-semibold rounded-full hover:bg-gray-100 transition duration-300 shadow-lg transform hover:scale-105">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 lg:py-24 bg-background-light">
+            <div class="container-padding">
+                <h2 class="text-3xl lg:text-4xl section-title">About Darul Qur'an</h2>
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div class="mb-8 lg:mb-0">
+                        <p class="text-lg mb-4">
+                            Darul Qur'an Purakkad is more than a school; it is a center of excellence dedicated to the holistic development of the next generation. We provide a structured, disciplined, and nurturing environment for young students from the age of 5 up to 15.
+                        </p>
+                        <p class="text-lg mb-4">
+                            Our unique model ensures that students become proficient memorizers of the Holy Qur'an (Hafiz) while simultaneously pursuing a high-quality, full-fledged modern academic curriculum. This dual focus ensures they are prepared for both the hereafter and the challenges of the contemporary world.
+                        </p>
+                        <ul class="space-y-3 text-lg font-medium text-primary">
+                            <li><i class="fa-solid fa-graduation-cap w-6 text-secondary"></i> Integrated Academic & Spiritual Program</li>
+                            <li><i class="fa-solid fa-user-shield w-6 text-secondary"></i> Safe, Supervised Residential Campus</li>
+                            <li><i class="fa-solid fa-child-reaching w-6 text-secondary"></i> Character Building and Moral Education</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <!-- Placeholder for a serene image of children learning or a mosque -->
+                        <img src="https://placehold.co/600x400/064E3B/FCD34D?text=Serene+Qur'an+Class" 
+                             alt="Students reciting Qur'an" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/064E3B/FCD34D?text=Serene+Qur\'an+Class';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Highlights Section (Stats) -->
+        <section class="py-16 lg:py-24 bg-white">
+            <div class="container-padding text-center">
+                <h2 class="text-3xl lg:text-4xl section-title mx-auto w-fit">Our Promise of Excellence</h2>
+                <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Stat 1 -->
+                    <div class="p-6 bg-primary text-white rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-book-quran text-5xl mb-3 text-accent-light"></i>
+                        <div class="text-3xl font-bold font-serif">100%</div>
+                        <p class="mt-2 text-sm lg:text-base">Hifz Focus</p>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="p-6 bg-primary text-white rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-users text-5xl mb-3 text-accent-light"></i>
+                        <div class="text-3xl font-bold font-serif">Ages 5-15</div>
+                        <p class="mt-2 text-sm lg:text-base">Target Age Group</p>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="p-6 bg-primary text-white rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-house-chimney text-5xl mb-3 text-accent-light"></i>
+                        <div class="text-3xl font-bold font-serif">Residential</div>
+                        <p class="mt-2 text-sm lg:text-base">Full-Time Supervision</p>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="p-6 bg-primary text-white rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-star text-5xl mb-3 text-accent-light"></i>
+                        <div class="text-3xl font-bold font-serif">Holistic</div>
+                        <p class="mt-2 text-sm lg:text-base">Spiritual & Academic</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="py-16 lg:py-24 bg-background-light">
+            <div class="container-padding">
+                <h2 class="text-3xl lg:text-4xl section-title">Our Integrated Curriculum</h2>
+                <div class="lg:grid lg:grid-cols-3 lg:gap-12">
+                    
+                    <!-- Card 1: Qur'an & Islamic Studies -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg mb-8 lg:mb-0 border-t-4 border-secondary">
+                        <i class="fa-solid fa-hands-praying text-4xl text-secondary mb-4"></i>
+                        <h3 class="text-2xl font-semibold font-serif text-primary mb-3">Qur'an & Islamic Studies</h3>
+                        <p class="mb-4">
+                            The foundation of our learning. Focus on Hifz (memorization), rigorous Tajweed (correct pronunciation), Tafseer (exegesis) fundamentals, and Fiqh (jurisprudence).
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Structured Hifz Plan</li>
+                            <li>Advanced Tajweed Rules</li>
+                            <li>Hadith and Seerah Classes</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 2: Modern Academics -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg mb-8 lg:mb-0 border-t-4 border-primary">
+                        <i class="fa-solid fa-chalkboard-user text-4xl text-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold font-serif text-primary mb-3">Modern Academics</h3>
+                        <p class="mb-4">
+                            Following the standard State/National curriculum, our students excel in core subjects crucial for higher education and career progression.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Mathematics & Science</li>
+                            <li>English & Regional Languages</li>
+                            <li>Social Sciences & IT Fundamentals</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 3: Character Building -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary">
+                        <i class="fa-solid fa-person-shelter text-4xl text-secondary mb-4"></i>
+                        <h3 class="text-2xl font-semibold font-serif text-primary mb-3">Character Building</h3>
+                        <p class="mb-4">
+                            Beyond books, we instill core Islamic values, discipline, respect, and community service, shaping responsible and conscientious citizens.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Leadership & Public Speaking</li>
+                            <li>Sports and Physical Fitness</li>
+                            <li>Regular Moral Guidance Sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Residential Life Section -->
+        <section id="residential" class="py-16 lg:py-24 bg-white">
+            <div class="container-padding">
+                <h2 class="text-3xl lg:text-4xl section-title">Residential Life: The Daily Journey</h2>
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1 mb-8 lg:mb-0">
+                        <h3 class="text-2xl font-semibold font-serif text-primary mb-4">Structured & Supportive Environment</h3>
+                        <p class="text-lg mb-4">
+                            Residential life at Darul Qur'an Purakkad is designed to provide maximum focus and spiritual growth. With 24/7 supervision, our campus ensures every child is safe, well-cared for, and maintains a disciplined routine.
+                        </p>
+                        <p class="text-lg mb-6">
+                            From early Fajr prayers and Qur'an revision to supervised study time and healthy recreation, every hour is optimized for learning and character development.
+                        </p>
+                        
+                        <!-- Mini Timeline / Routine -->
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="p-4 bg-background-light rounded-lg shadow-inner">
+                                <p class="font-bold text-primary"><i class="fa-solid fa-moon text-secondary"></i> 5:00 AM</p>
+                                <p class="text-sm">Fajr & Morning Hifz</p>
+                            </div>
+                            <div class="p-4 bg-background-light rounded-lg shadow-inner">
+                                <p class="font-bold text-primary"><i class="fa-solid fa-school text-secondary"></i> 9:30 AM</p>
+                                <p class="text-sm">Academic Classes</p>
+                            </div>
+                            <div class="p-4 bg-background-light rounded-lg shadow-inner">
+                                <p class="font-bold text-primary"><i class="fa-solid fa-dumbbell text-secondary"></i> 4:30 PM</p>
+                                <p class="text-sm">Sports & Recreation</p>
+                            </div>
+                            <div class="p-4 bg-background-light rounded-lg shadow-inner">
+                                <p class="font-bold text-primary"><i class="fa-solid fa-book-open-reader text-secondary"></i> 7:30 PM</p>
+                                <p class="text-sm">Maghrib & Revision</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 rounded-xl overflow-hidden shadow-2xl h-96">
+                        <!-- Placeholder for a clean dormitory or common area image -->
+                        <img src="https://placehold.co/600x400/064E3B/FCD34D?text=Residential+Dormitory" 
+                             alt="Residential facilities" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/064E3B/FCD34D?text=Residential+Dormitory';">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Admissions Section -->
+        <section id="admissions" class="py-16 lg:py-24 bg-background-light">
+            <div class="container-padding text-center">
+                <h2 class="text-3xl lg:text-4xl section-title mx-auto w-fit">Admissions for 2024-2025</h2>
+                <p class="text-xl mb-12 max-w-3xl mx-auto">
+                    We welcome applications from dedicated young boys who are eager to commit to this sacred and challenging journey.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    
+                    <!-- Step 1 -->
+                    <div class="p-6 bg-white rounded-xl shadow-xl border-b-4 border-secondary">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center font-bold">1</div>
+                            <h3 class="text-xl font-semibold text-primary">Check Eligibility</h3>
+                        </div>
+                        <p class="text-gray-600">The program is exclusively for boys aged 5 to 15 years. Basic reading and writing ability is expected for older students.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-6 bg-white rounded-xl shadow-xl border-b-4 border-primary">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+                            <h3 class="text-xl font-semibold text-primary">Application & Screening</h3>
+                        </div>
+                        <p class="text-gray-600">Download the application form or collect it from the campus office. A simple screening/interview will be conducted with the applicant and parents.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="p-6 bg-white rounded-xl shadow-xl border-b-4 border-secondary">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center font-bold">3</div>
+                            <h3 class="text-xl font-semibold text-primary">Confirmation & Start</h3>
+                        </div>
+                        <p class="text-gray-600">Upon successful admission, complete the document submission and fee payment to secure the spot for the upcoming academic session.</p>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="mt-12 inline-block px-10 py-4 bg-primary text-white text-xl font-semibold rounded-full hover:bg-opacity-90 transition duration-300 shadow-xl transform hover:scale-105">
+                    Contact Admissions Office
+                </a>
+            </div>
+        </section>
+
+        <!-- Call to Action / Footer Contact -->
+        <section id="contact" class="py-16 lg:py-24 bg-primary text-white">
+            <div class="container-padding lg:flex lg:justify-between lg:items-start space-y-12 lg:space-y-0">
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/3">
+                    <h3 class="text-3xl font-serif font-bold mb-4 text-accent-light">Reach Out</h3>
+                    <p class="text-lg mb-6 max-w-xs">
+                        Visit us, call us, or send an email. We are here to answer all your queries regarding enrollment and residential life.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-map-marker-alt text-2xl text-secondary"></i>
+                            <span class="text-lg">Purakkad P.O., Kozhikode District, Kerala - 673528, India</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-2xl text-secondary"></i>
+                            <a href="tel:+911234567890" class="text-lg hover:underline">+91 12345 67890 (Office)</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-2xl text-secondary"></i>
+                            <a href="mailto:info@darulquranpurakkad.com" class="text-lg hover:underline">info@darulquranpurakkad.com</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Contact Form -->
+                <div class="lg:w-2/3 lg:pl-16">
+                    <h3 class="text-3xl font-serif font-bold mb-4 text-accent-light">Send A Message</h3>
+                    <form class="space-y-4 bg-white p-8 rounded-xl shadow-2xl">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary" required>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary" required>
+                        <textarea placeholder="Your Message or Query" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary" required></textarea>
+                        <button type="submit" class="w-full px-6 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-opacity-90 transition duration-300 shadow-lg">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container-padding text-center text-sm">
+            <p>&copy; 2024 Darul Qur'an Purakkad. All Rights Reserved. | Designed for excellence in faith and education.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.querySelectorAll('a');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked (for smoother mobile navigation)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Simple smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
