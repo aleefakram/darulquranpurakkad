@@ -1,311 +1,93 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Darul Qur'an Purakkad - Residential Qur'an Learning School</title>
-  <meta name="description" content="Darul Qur'an Purakkad — Premier residential Qur'an memorization (Hifz) and modern academic program for children aged 5–15 in Kerala, India. A non-profit initiative.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://aleefakram.github.io/darul-quran-purakkad/">
-  
+  <meta name="description" content="Darul Qur'an Purakkad - Premier residential Qur'an memorization (Hifz) and modern academic program for children aged 5-15 in Kerala, India. A non-profit initiative." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://darulquranpurakkad.netlify.app/" />
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="assets/hero-bg.webp" />
+
   <!-- Open Graph + Twitter -->
-  <meta property="og:title" content="Darul Qur'an Purakkad">
-  <meta property="og:description" content="Residential Qur'an memorization and modern academics for children aged 5–15.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aleefakram.github.io/darul-quran-purakkad/">
-  <meta property="og:image" content="assets/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root{--primary:#064E3B;--secondary:#D97706;--accent:#FCD34D;--bg:#FDFCF5;--surface:#fff;--text:#374151;--muted:#6B7280;--error:#DC2626;--success:#16A34A}
-    .dark{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Lato',sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-    h1,h2,h3{font-family:'Playfair Display',serif}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-    .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:.75rem 1.5rem;border-radius:0 0 .5rem .5rem;z-index:9999;text-decoration:none}
-    .skip-link:focus{top:0;outline:3px solid var(--accent)}
-    :focus-visible{outline:3px solid var(--secondary);outline-offset:3px}
-    .container{max-width:1280px;margin:0 auto;padding:0 1rem}
-    @media(min-width:1024px){.container{padding:0 2.5rem}}
-    
-    /* Header */
-    .header{position:sticky;top:0;z-index:100;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.1)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;height:5rem}
-    .logo{display:flex;align-items:center;gap:.75rem;font-size:1.25rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--primary);text-decoration:none}
-    .dark .logo{color:var(--accent)}
-    .nav-desktop{display:none}
-    @media(min-width:1024px){.nav-desktop{display:flex;align-items:center;gap:2rem}}
-    .nav-link{color:var(--primary);text-decoration:none;font-weight:500;padding:.5rem 0;position:relative;transition:color .2s}
-    .dark .nav-link{color:var(--text)}
-    .nav-link:hover{color:var(--secondary)}
-    .nav-cta{padding:.625rem 1.5rem;background:var(--secondary);color:#fff;border-radius:9999px;font-weight:600;text-decoration:none;transition:all .2s}
-    .nav-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}
-    .nav-donate{padding:.625rem 1.5rem;background:transparent;border:2px solid var(--secondary);color:var(--secondary);border-radius:9999px;font-weight:600;text-decoration:none;transition:all .2s}
-    .nav-donate:hover{background:var(--secondary);color:#fff}
+  <meta property="og:title" content="Darul Qur'an Purakkad" />
+  <meta property="og:description" content="Residential Qur'an memorization and modern academics for children aged 5-15." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://darulquranpurakkad.netlify.app/" />
+  <meta property="og:image" content="https://darulquranpurakkad.netlify.app/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    .menu-btn,.theme-btn{display:flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;background:transparent;border:none;color:var(--primary);cursor:pointer;border-radius:.5rem}
-    .dark .menu-btn,.dark .theme-btn{color:var(--text)}
-    @media(min-width:1024px){.menu-btn{display:none}}
-    .mobile-nav{display:none;position:absolute;top:5rem;left:0;right:0;background:var(--surface);box-shadow:0 10px 40px rgba(0,0,0,.15);padding:1rem}
-    .mobile-nav.open{display:block}
-    @media(min-width:1024px){.mobile-nav{display:none!important}}
-    .mobile-nav a{display:block;padding:1rem;color:var(--primary);text-decoration:none;font-weight:500;text-align:center;border-radius:.5rem}
-    .dark .mobile-nav a{color:var(--text)}
-    
-    /* Hero */
-    .hero{background:linear-gradient(135deg,rgba(6,78,59,.92),rgba(0,0,0,.7)), url('assets/hero-bg.webp');}
-    @media(min-width:768px){.hero{padding:8rem 0}}
-    .hero-content{text-align:center;max-width:56rem;margin:0 auto}
-    .hero h1{font-size:clamp(2rem,5vw,3.75rem);font-weight:800;margin-bottom:1.5rem;animation:fadeUp .8s ease-out;color: #fff;}
-    .hero p{font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:300;opacity:.95;max-width:48rem;margin:0 auto 2.5rem;animation:fadeUp .8s ease-out .1s both;color: #e2e8f0;}
-    .hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;animation:fadeUp .8s ease-out .2s both}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    .btn-primary{padding:1rem 2rem;background:var(--secondary);color:#fff;font-size:1.125rem;font-weight:600;border-radius:9999px;text-decoration:none;box-shadow:0 4px 14px rgba(217,119,6,.4);transition:all .2s;border:none;cursor:pointer;}
-    .btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px)}
-    .btn-secondary{padding:1rem 2rem;background:#fff;color:var(--primary);font-size:1.125rem;font-weight:600;border-radius:9999px;text-decoration:none;transition:all .2s}
-    .btn-secondary:hover{background:#f3f4f6;transform:translateY(-2px)}
-    
-    /* Sections */
-    .section{padding:4rem 0}
-    @media(min-width:768px){.section{padding:6rem 0}}
-    .section-alt{background:var(--bg)}
-    .section-white{background:var(--surface)}
-    .section-title{font-size:clamp(1.75rem,4vw,2.5rem);color:var(--primary);text-align:center;margin-bottom:1rem}
-    .dark .section-title{color:var(--accent)}
-    .section-title::after{content:'';display:block;width:5rem;height:4px;background:var(--secondary);margin:.75rem auto 0;border-radius:2px}
-    .section-subtitle{text-align:center;font-size:1.125rem;color:var(--muted);max-width:48rem;margin:0 auto 3rem}
-    
-    /* Grids */
-    .grid-2{display:grid;gap:3rem}
-    @media(min-width:1024px){.grid-2{grid-template-columns:1fr 1fr;align-items:center}}
-    .grid-3{display:grid;gap:2rem}
-    @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-    .grid-4{display:grid;gap:1.5rem;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr)}}
-    
-    /* Cards */
-    .card{background:var(--surface);border-radius:1rem;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:4px solid var(--secondary);transition:transform .3s,box-shadow .3s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
-    .card h3{font-size:1.375rem;color:var(--primary);margin-bottom:.75rem}
-    .dark .card h3{color:var(--accent)}
-    .card p{color:var(--muted);margin-bottom:1rem}
-    .card ul{list-style:disc;padding-left:1.25rem;color:var(--muted);font-size:.9375rem}
-    
-    /* Stats */
-    .stat-card{background:var(--primary);color:#fff;padding:1.5rem;border-radius:1rem;text-align:center;box-shadow:0 4px 20px rgba(6,78,59,.3);transition:transform .3s}
-    .stat-card:hover{transform:scale(1.05)}
-    .stat-value{font-size:1.75rem;font-weight:700;font-family:'Playfair Display',serif}
-    .stat-label{font-size:.875rem;opacity:.9;margin-top:.25rem}
-    
-    /* Image */
-    .img-box{background:linear-gradient(135deg,var(--primary),#053529);border-radius:1rem;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.25rem;box-shadow:0 10px 40px rgba(0,0,0,.2)}
-    
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    @media(min-width: 768px) {
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    }
-    @media(min-width: 1024px) {
-      .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-    .gallery-item {
-      position: relative;
-      border-radius: 0.75rem;
-      overflow: hidden;
-      aspect-ratio: 1;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.3);
-      opacity: 0;
-      transition: opacity 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    .zoom-icon {
-      color: white;
-      width: 2rem;
-      height: 2rem;
-    }
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='36'>DQP</text></svg>" />
 
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      backdrop-filter: blur(5px);
-    }
-    .lightbox.active { display: flex; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-    .lightbox-content {
-      max-width: 100%;
-      max-height: 90vh;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: white;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
-    /* Schedule */
-    .schedule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
-    .schedule-item{background:var(--bg);padding:1rem;border-radius:.75rem;text-align:center}
-    .schedule-time{font-weight:700;color:var(--primary);margin-bottom:.25rem}
-    .dark .schedule-time{color:var(--accent)}
-    .schedule-label{font-size:.875rem;color:var(--muted)}
-    
-    /* Steps */
-    .step{background:var(--surface);padding:1.5rem;border-radius:1rem;box-shadow:0 4px 20px rgba(0,0,0,.08);border-bottom:4px solid var(--secondary)}
-    .step-header{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
-    .step-num{width:2.5rem;height:2.5rem;background:var(--secondary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
-    .step h3{font-size:1.25rem;color:var(--primary)}
-    .dark .step h3{color:var(--accent)}
-    .step p{color:var(--muted)}
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 
-    /* Donation */
-    .donation-section {
-      background: linear-gradient(135deg, #064E3B 0%, #042f24 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .donation-section::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .donation-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 48rem;
-      margin: 0 auto;
-    }
-    .donation-highlight {
-      background: rgba(255,255,255,0.1);
-      padding: 2rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      margin-top: 2rem;
-    }
-    
-    /* Contact */
-    .contact-section{background:var(--surface);padding:4rem 0}
-    @media(min-width:768px){.contact-section{padding:6rem 0}}
-    .contact-grid{display:grid;gap:3rem}
-    @media(min-width:1024px){.contact-grid{grid-template-columns:1fr 2fr}}
-    .contact-info h3{font-size:1.875rem;color:var(--primary);margin-bottom:1rem}
-    .dark .contact-info h3{color:var(--accent)}
-    .contact-info p{opacity:.9;margin-bottom:1.5rem;max-width:20rem; color: var(--muted);}
-    .contact-list{list-style:none}
-    .contact-item{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;color: var(--text);}
-    .contact-item a{color:var(--primary);text-decoration:none;font-weight:500}
-    .dark .contact-item a{color:var(--accent)}
-    .contact-item a:hover{text-decoration:underline}
-    
-    /* Form */
-    .contact-form{background:var(--bg);padding:2rem;border-radius:1rem;box-shadow:0 10px 40px rgba(0,0,0,.1)}
-    .contact-form h3{font-size:1.5rem;color:var(--primary);margin-bottom:1.5rem}
-    .dark .contact-form h3{color:var(--accent)}
-    .form-group{margin-bottom:1.25rem}
-    .form-label{display:block;font-weight:500;color:var(--text);margin-bottom:.375rem;font-size:.9375rem}
-    .form-input{width:100%;padding:.875rem 1rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem;font-family:inherit;transition:border-color .2s,box-shadow .2s; background: var(--surface); color: var(--text);}
-    .dark .form-input{border-color:#4b5563;}
-    .form-input:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 3px rgba(217,119,6,.2)}
-    .form-error{color:var(--error);font-size:.875rem;margin-top:.375rem;display:none}
-    .form-error[aria-live]{display:block}
-    .form-success{color:var(--success);font-size:.9375rem;margin-top:1rem;display:none}
-    .form-success.show{display:block}
-    .form-submit{width:100%;padding:1rem;background:var(--secondary);color:#fff;font-size:1rem;font-weight:600;border:none;border-radius:.5rem;cursor:pointer;transition:background .2s}
-    .form-submit:hover{filter:brightness(1.1)}
-    .hp-field{position:absolute;left:-9999px}
-    
-    /* Footer */
-    .footer{background:#1f2937;color:#fff;padding:2rem 0;text-align:center}
-    .footer p{font-size:.875rem;opacity:.8}
-    .footer-non-profit { font-size: 0.75rem; opacity: 0.6; margin-top: 0.5rem; }
-    
-    /* Utilities */
-    .icon{width:2.5rem;height:2.5rem;color:var(--secondary);margin-bottom:1rem}
-    .icon-sm{width:1.5rem;height:1.5rem;color:var(--secondary);flex-shrink:0}
-    .icon-stat{width:3rem;height:3rem;color:var(--accent);margin-bottom:.75rem}
-    .text-content p{margin-bottom:1rem;font-size:1.125rem}
-    .text-content ul{margin-top:1.5rem}
-    .text-content li{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;font-weight:500}
-    
-    /* Print & Motion */
-    @media print{.header,.hero-btns,.nav-cta,.theme-btn,.menu-btn,.contact-form{display:none}.hero{min-height:auto;padding:2rem 0}.section{padding:2rem 0}body{color:#000;background:#fff}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
-  </style>
-  
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Darul Qur'an Purakkad","description":"Residential Qur'an memorization and modern academic program for children aged 5–15 in Kerala, India","url":"https://aleefakram.github.io/darul-quran-purakkad/","address":{"@type":"PostalAddress","streetAddress":"Purakkad P.O.","addressLocality":"Kozhikode District","addressRegion":"Kerala","postalCode":"673522","addressCountry":"IN"},"telephone":"+911234567890","email":"info@darulquranpurakkad.com", "nonProfitStatus": "Registered Non-Profit"}
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOrganization",
+    "name":"Darul Qur'an Purakkad",
+    "description":"Residential Qur'an memorization and modern academic program for children aged 5–15 in Kerala, India",
+    "url":"https://darulquranpurakkad.netlify.app/",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Purakkad P.O.",
+      "addressLocality":"Kozhikode District",
+      "addressRegion":"Kerala",
+      "postalCode":"673522",
+      "addressCountry":"IN"
+    },
+    "telephone":"+911234567890",
+    "email":"info@darulquranpurakkad.com"
+  }
   </script>
 </head>
+
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
-  <noscript><div style="background:var(--secondary);color:#fff;padding:1rem;text-align:center">This site works best with JavaScript enabled.</div></noscript>
+
+  <noscript>
+    <div class="noscript-banner">
+      This site works best with JavaScript enabled.
+    </div>
+  </noscript>
 
   <header class="header" role="banner">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Darul Qur'an Purakkad - Home">
-        <img src="assets/logo.png" alt="" width="40" height="40" style="object-fit:contain;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5i8PC90ZXh0Pjwvc3ZnPg=='">
+      <a href="/" class="logo" aria-label="Darul Qur'an Purakkad - Home">
+        <img
+          class="logo-img"
+          src="assets/logo.png"
+          alt="Darul Qur'an Purakkad logo"
+          width="40"
+          height="40"
+          decoding="async"
+          data-fallback="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjM2Ij5EUVA8L3RleHQ+PC9zdmc+"
+        />
         <span>Darul Qur'an Purakkad</span>
       </a>
-      <div style="display:flex;align-items:center;gap:.5rem">
+
+      <div class="header-actions">
         <button class="theme-btn" id="themeBtn" aria-label="Switch to dark mode" type="button">
-          <svg id="themeIcon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="themeIcon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
         </button>
+
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav" type="button">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
+
         <nav class="nav-desktop" aria-label="Main navigation">
           <a href="#about" class="nav-link">About</a>
           <a href="#curriculum" class="nav-link">Curriculum</a>
@@ -316,6 +98,7 @@
         </nav>
       </div>
     </div>
+
     <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
       <a href="#about">About</a>
       <a href="#curriculum">Curriculum</a>
@@ -341,18 +124,41 @@
     <section id="about" class="section section-alt">
       <div class="container">
         <h2 class="section-title">About Darul Qur'an</h2>
+
         <div class="grid-2">
           <div class="text-content">
             <p>Darul Qur'an Purakkad is a center of excellence dedicated to the holistic development of the next generation. We provide a structured, disciplined, and nurturing environment for young students from age 5 up to 15.</p>
             <p>Operated under a registered <strong>Non-Profit Organization</strong>, our mission is to make high-quality spiritual and secular education accessible. We rely on community support to maintain our standards and facilities.</p>
             <p>Our unique model ensures students become proficient memorizers of the Holy Qur'an (Hafiz) while simultaneously pursuing high-quality modern academics.</p>
-            <ul>
-              <li><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/></svg> Registered Non-Profit Initiative</li>
-              <li><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Safe, Supervised Residential Campus</li>
-              <li><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Character Building & Moral Education</li>
+
+            <ul class="feature-list">
+              <li>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"></path></svg>
+                Registered Non-Profit Initiative
+              </li>
+              <li>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg>
+                Safe, Supervised Residential Campus
+              </li>
+              <li>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                Character Building & Moral Education
+              </li>
             </ul>
           </div>
-          <img src="assets/learning.jpg" alt="Students reciting Qur'an in a circle" class="img-box" style="object-fit:cover; width:100%; padding:0;" onerror="this.src='https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=1000&auto=format&fit=crop'">
+
+          <div class="img-box">
+            <img
+              class="img-cover"
+              src="assets/learning.jpg"
+              alt="Students reciting Qur'an in a circle"
+              width="1000"
+              height="750"
+              loading="lazy"
+              decoding="async"
+              data-fallback="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=1000&auto=format&fit=crop"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -360,11 +166,31 @@
     <section class="section section-white">
       <div class="container">
         <h2 class="section-title">Our Promise of Excellence</h2>
+
         <div class="grid-4">
-          <div class="stat-card"><svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor"><path d="M6 22h15v-2H6.012C5.55 19.988 5 19.805 5 19s.55-.988 1.012-1H21V4c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v18h2zm13-18v12H5V4h14z"/></svg><div class="stat-value">100%</div><p class="stat-label">Hifz Focus</p></div>
-          <div class="stat-card"><svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><div class="stat-value">Ages 5-15</div><p class="stat-label">Target Age Group</p></div>
-          <div class="stat-card"><svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><div class="stat-value">Residential</div><p class="stat-label">Full-Time Supervision</p></div>
-          <div class="stat-card"><svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><div class="stat-value">Holistic</div><p class="stat-label">Spiritual & Academic</p></div>
+          <div class="stat-card">
+            <svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 22h15v-2H6.012C5.55 19.988 5 19.805 5 19s.55-.988 1.012-1H21V4c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v18h2zm13-18v12H5V4h14z"></path></svg>
+            <div class="stat-value">100%</div>
+            <p class="stat-label">Hifz Focus</p>
+          </div>
+
+          <div class="stat-card">
+            <svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
+            <div class="stat-value">Ages 5–15</div>
+            <p class="stat-label">Target Age Group</p>
+          </div>
+
+          <div class="stat-card">
+            <svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+            <div class="stat-value">Residential</div>
+            <p class="stat-label">Full-Time Supervision</p>
+          </div>
+
+          <div class="stat-card">
+            <svg class="icon-stat" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <div class="stat-value">Holistic</div>
+            <p class="stat-label">Spiritual & Academic</p>
+          </div>
         </div>
       </div>
     </section>
@@ -372,10 +198,40 @@
     <section id="curriculum" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Our Integrated Curriculum</h2>
+
         <div class="grid-3">
-          <article class="card"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04z"/></svg><h3>Qur'an & Islamic Studies</h3><p>The foundation of our learning: Hifz, Tajweed, Tafseer, and Fiqh.</p><ul><li>Structured Hifz Plan</li><li>Advanced Tajweed Rules</li><li>Hadith and Seerah Classes</li></ul></article>
-          <article class="card"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg><h3>Modern Academics</h3><p>Following State/National curriculum for higher education preparation.</p><ul><li>Mathematics & Science</li><li>English & Regional Languages</li><li>Social Sciences & IT</li></ul></article>
-          <article class="card"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><h3>Character Building</h3><p>Core Islamic values, discipline, respect, and community service.</p><ul><li>Leadership & Public Speaking</li><li>Sports and Fitness</li><li>Moral Guidance Sessions</li></ul></article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04z"></path></svg>
+            <h3>Qur'an & Islamic Studies</h3>
+            <p>The foundation of our learning: Hifz, Tajweed, Tafseer, and Fiqh.</p>
+            <ul>
+              <li>Structured Hifz Plan</li>
+              <li>Advanced Tajweed Rules</li>
+              <li>Hadith and Seerah Classes</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
+            <h3>Modern Academics</h3>
+            <p>Following State/National curriculum for higher education preparation.</p>
+            <ul>
+              <li>Mathematics & Science</li>
+              <li>English & Regional Languages</li>
+              <li>Social Sciences & IT</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+            <h3>Character Building</h3>
+            <p>Core Islamic values, discipline, respect, and community service.</p>
+            <ul>
+              <li>Leadership & Public Speaking</li>
+              <li>Sports and Fitness</li>
+              <li>Moral Guidance Sessions</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -383,64 +239,115 @@
     <section id="residential" class="section section-white">
       <div class="container">
         <h2 class="section-title">Residential Life</h2>
+
         <div class="grid-2">
           <div class="text-content">
-            <h3 style="font-size:1.5rem;color:var(--primary);margin-bottom:1rem">Structured & Supportive Environment</h3>
+            <h3 class="section-mini-title">Structured & Supportive Environment</h3>
             <p>Residential life at Darul Qur'an is designed to provide maximum focus and spiritual growth. With 24/7 supervision, our campus ensures every child is safe, well-cared for, and maintains a disciplined routine.</p>
             <p>From early Fajr prayers and Qur'an revision to supervised study time and healthy recreation, every hour is optimized for learning and character development.</p>
-            <div class="schedule-grid">
+
+            <div class="schedule-grid" aria-label="Daily schedule overview">
               <div class="schedule-item"><p class="schedule-time">🌙 5:00 AM</p><p class="schedule-label">Fajr & Morning Hifz</p></div>
               <div class="schedule-item"><p class="schedule-time">📚 9:30 AM</p><p class="schedule-label">Academic Classes</p></div>
               <div class="schedule-item"><p class="schedule-time">⚽ 4:30 PM</p><p class="schedule-label">Sports & Recreation</p></div>
               <div class="schedule-item"><p class="schedule-time">📖 7:30 PM</p><p class="schedule-label">Maghrib & Revision</p></div>
             </div>
           </div>
-          <img src="assets/residential.jpg" alt="Residential campus facilities" style="width:100%; height:100%; object-fit:cover; border-radius:1rem; box-shadow:0 10px 40px rgba(0,0,0,.2);" onerror="this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop'">
+
+          <div class="img-box">
+            <img
+              class="img-cover"
+              src="assets/residential.jpg"
+              alt="Residential campus facilities"
+              width="1360"
+              height="1020"
+              loading="lazy"
+              decoding="async"
+              data-fallback="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop"
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Image Gallery Section -->
     <section id="gallery" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Life at Darul Qur'an</h2>
         <p class="section-subtitle">Glimpses of our facilities, classrooms, and student activities.</p>
-        
+
         <div class="gallery-grid" id="galleryGrid">
-          <!-- Gallery Item 1 -->
-          <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="assets/gallery-1.jpg" alt="Classroom session" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop'">
-            <div class="gallery-overlay"><svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg></div>
+          <div class="gallery-item" role="button" tabindex="0" data-full="assets/gallery-1.jpg" data-alt="Classroom session">
+            <img
+              src="assets/gallery-1.jpg"
+              alt="Classroom session"
+              width="960"
+              height="956"
+              loading="lazy"
+              decoding="async"
+              data-fallback="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop"
+            />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
           </div>
-           <!-- Gallery Item 2 -->
-           <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="assets/gallery-2.jpg" alt="Mosque area" onerror="this.src='https://images.unsplash.com/photo-1577218698715-285600c3c6f1?q=80&w=1000&auto=format&fit=crop'">
-            <div class="gallery-overlay"><svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg></div>
+
+          <div class="gallery-item" role="button" tabindex="0" data-full="assets/gallery-2.jpg" data-alt="Mosque area">
+            <img
+              src="assets/gallery-2.jpg"
+              alt="Mosque area"
+              width="1000"
+              height="750"
+              loading="lazy"
+              decoding="async"
+              data-fallback="https://images.unsplash.com/photo-1577218698715-285600c3c6f1?q=80&w=1000&auto=format&fit=crop"
+            />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
           </div>
-           <!-- Gallery Item 3 -->
-           <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="assets/gallery-3.jpg" alt="Library" onerror="this.src='https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000&auto=format&fit=crop'">
-            <div class="gallery-overlay"><svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg></div>
+
+          <div class="gallery-item" role="button" tabindex="0" data-full="assets/gallery-3.jpg" data-alt="Library">
+            <img
+              src="assets/gallery-3.jpg"
+              alt="Library"
+              width="1360"
+              height="765"
+              loading="lazy"
+              decoding="async"
+              data-fallback="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000&auto=format&fit=crop"
+            />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
           </div>
-           <!-- Gallery Item 4 -->
-           <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="assets/gallery-4.jpg" alt="Student studying" onerror="this.src='https://images.unsplash.com/photo-1427504746696-ea5abd71a361?q=80&w=1000&auto=format&fit=crop'">
-            <div class="gallery-overlay"><svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg></div>
+
+          <div class="gallery-item" role="button" tabindex="0" data-full="assets/gallery-4.jpg" data-alt="Student studying">
+            <img
+              src="assets/gallery-4.jpg"
+              alt="Student studying"
+              width="1360"
+              height="765"
+              loading="lazy"
+              decoding="async"
+              data-fallback="https://images.unsplash.com/photo-1427504746696-ea5abd71a361?q=80&w=1000&auto=format&fit=crop"
+            />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Support / Donation Section -->
     <section id="support" class="section donation-section">
       <div class="container donation-content">
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.75rem,4vw,2.5rem);margin-bottom:1rem">Support Our Vision</h2>
-        <p style="font-size:1.125rem;margin-bottom:2rem;opacity:0.9">Darul Qur'an Purakkad operates under a registered Non-Profit Organization. Your generous contributions help us maintain facilities, provide scholarships for needy students, and expand our educational reach.</p>
-        
+        <h2 class="donation-title">Support Our Vision</h2>
+        <p class="donation-subtitle">Darul Qur'an Purakkad operates under a registered Non-Profit Organization. Your generous contributions help us maintain facilities, provide scholarships for needy students, and expand our educational reach.</p>
+
         <div class="donation-highlight">
-          <h3 style="font-size:1.25rem;margin-bottom:0.5rem">Make a Donation</h3>
-          <p style="margin-bottom:1.5rem;font-size:0.9rem;opacity:0.8">Invest in the future of our children and earn Sadqa-e-Jariyah.</p>
-          <a href="#" target="_blank" class="btn-secondary" style="display:inline-block">Proceed to Donation</a>
+          <h3 class="donation-card-title">Make a Donation</h3>
+          <p class="donation-card-subtitle">Invest in the future of our children and earn Sadqa-e-Jariyah.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary donation-btn">Proceed to Donation</a>
         </div>
       </div>
     </section>
@@ -449,12 +356,36 @@
       <div class="container">
         <h2 class="section-title">Admissions for 2025-2026</h2>
         <p class="section-subtitle">We welcome applications from dedicated young students eager to commit to this sacred and challenging journey.</p>
+
         <div class="grid-3">
-          <div class="step"><div class="step-header"><div class="step-num">1</div><h3>Check Eligibility</h3></div><p>Program is for children aged 5 to 15 years. Basic reading/writing ability expected for older students.</p></div>
-          <div class="step"><div class="step-header"><div class="step-num">2</div><h3>Application & Screening</h3></div><p>Download the application form or collect from campus. A screening interview will be conducted with applicant and parents.</p></div>
-          <div class="step"><div class="step-header"><div class="step-num">3</div><h3>Confirmation & Start</h3></div><p>Upon successful admission, complete document submission and fee payment to secure your spot.</p></div>
+          <div class="step">
+            <div class="step-header">
+              <div class="step-num">1</div>
+              <h3>Check Eligibility</h3>
+            </div>
+            <p>Program is for children aged 5 to 15 years. Basic reading/writing ability expected for older students.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-num">2</div>
+              <h3>Application & Screening</h3>
+            </div>
+            <p>Download the application form or collect from campus. A screening interview will be conducted with applicant and parents.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-num">3</div>
+              <h3>Confirmation & Start</h3>
+            </div>
+            <p>Upon successful admission, complete document submission and fee payment to secure your spot.</p>
+          </div>
         </div>
-        <div style="text-align:center;margin-top:3rem"><a href="#contact" class="btn-primary">Contact Admissions Office</a></div>
+
+        <div class="center">
+          <a href="#contact" class="btn-primary">Contact Admissions Office</a>
+        </div>
       </div>
     </section>
 
@@ -464,33 +395,68 @@
           <div class="contact-info">
             <h3>Reach Out</h3>
             <p>Visit us, call us, or send an email. We are here to answer all your queries regarding enrollment and residential life.</p>
+
             <ul class="contact-list">
-              <li class="contact-item"><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>Purakkad P.O., Kozhikode District, Kerala - 673528, India</span></li>
-              <li class="contact-item"><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+911234567890">+91 12345 67890</a></li>
-              <li class="contact-item"><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@darulquranpurakkad.com">info@darulquranpurakkad.com</a></li>
+              <li class="contact-item">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                <span>Purakkad P.O., Kozhikode District, Kerala - 673528, India</span>
+              </li>
+              <li class="contact-item">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                <a href="tel:+911234567890">+91 12345 67890</a>
+              </li>
+              <li class="contact-item">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                <a href="mailto:info@darulquranpurakkad.com">info@darulquranpurakkad.com</a>
+              </li>
             </ul>
           </div>
+
           <div class="contact-form">
             <h3>Send A Message</h3>
-            <form id="contactForm" novalidate>
-              <div class="hp-field" aria-hidden="true"><label>Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+            <!-- Netlify form -->
+            <form id="contactForm"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  novalidate>
+              <input type="hidden" name="form-name" value="contact" />
+
+              <div class="hp-field" aria-hidden="true">
+                <label>Leave empty
+                  <input type="text" name="bot-field" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
+
               <div class="form-group">
                 <label for="name" class="form-label">Your Name</label>
-                <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                <input type="text" id="name" name="name" class="form-input" required autocomplete="name" />
                 <p class="form-error" id="nameError" role="alert"></p>
               </div>
+
               <div class="form-group">
                 <label for="email" class="form-label">Your Email</label>
-                <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                <input type="email" id="email" name="email" class="form-input" required autocomplete="email" />
                 <p class="form-error" id="emailError" role="alert"></p>
               </div>
+
               <div class="form-group">
                 <label for="message" class="form-label">Your Message</label>
                 <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
                 <p class="form-error" id="messageError" role="alert"></p>
               </div>
-              <button type="submit" class="form-submit">Submit Inquiry</button>
-              <p class="form-success" id="formSuccess" role="status" aria-live="polite">Thank you! Your message has been sent.</p>
+
+              <button type="submit" class="form-submit" id="submitBtn">Submit Inquiry</button>
+
+              <p class="form-success" id="formSuccess" role="status" aria-live="polite">
+                Thank you! Your message has been sent.
+              </p>
+
+              <p class="form-error form-fail" id="formFail" role="alert">
+                Something went wrong. Please try again later.
+              </p>
             </form>
           </div>
         </div>
@@ -505,65 +471,10 @@
     </div>
   </footer>
 
-  <!-- Lightbox DOM -->
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image view">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-    <img id="lightboxImg" src="" alt="Full size view">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image" type="button">&times;</button>
+    <img id="lightboxImg" class="lightbox-content" src="" alt="" />
   </div>
-
-  <script>
-    // Theme Toggle
-    const themeBtn=document.getElementById('themeBtn'),themeIcon=document.getElementById('themeIcon'),html=document.documentElement;
-    const moonPath='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z',sunPath='M12 7a5 5 0 100 10 5 5 0 000-10zM2 13h2M12 2v2M22 13h-2M12 22v-2M5.6 5.6l1.4 1.4M16.9 16.9l1.4 1.4M5.6 18.4l1.4-1.4M16.9 7.1l1.4-1.4';
-    function setTheme(dark){html.classList.toggle('dark',dark);themeIcon.innerHTML=`<path d="${dark?sunPath:moonPath}"/>`;themeBtn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('theme',dark?'dark':'light')}catch(e){}}
-    const stored=localStorage.getItem('theme'),prefersDark=window.matchMedia('(prefers-color-scheme:dark)').matches;
-    setTheme(stored?stored==='dark':prefersDark);
-    themeBtn.addEventListener('click',()=>setTheme(!html.classList.contains('dark')));
-
-    // Mobile Menu
-    const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
-    menuBtn.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu')});
-    mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
-
-    // Form Validation
-    const form=document.getElementById('contactForm'),nameInput=document.getElementById('name'),emailInput=document.getElementById('email'),messageInput=document.getElementById('message');
-    const nameError=document.getElementById('nameError'),emailError=document.getElementById('emailError'),messageError=document.getElementById('messageError'),formSuccess=document.getElementById('formSuccess');
-    function showError(el,errEl,msg){el.setAttribute('aria-invalid','true');errEl.textContent=msg;errEl.style.display='block'}
-    function clearError(el,errEl){el.removeAttribute('aria-invalid');errEl.textContent='';errEl.style.display='none'}
-    form.addEventListener('submit',e=>{
-      e.preventDefault();let valid=true;
-      if(form.website&&form.website.value){return}// Honeypot
-      if(!nameInput.value.trim()){showError(nameInput,nameError,'Please enter your name.');valid=false}else{clearError(nameInput,nameError)}
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)){showError(emailInput,emailError,'Please enter a valid email.');valid=false}else{clearError(emailInput,emailError)}
-      if(!messageInput.value.trim()){showError(messageInput,messageError,'Please enter a message.');valid=false}else{clearError(messageInput,messageError)}
-      if(valid){formSuccess.classList.add('show');form.reset();setTimeout(()=>formSuccess.classList.remove('show'),5000)}
-    });
-
-    // Gallery Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    function openLightbox(element) {
-      const img = element.querySelector('img');
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      setTimeout(() => { lightboxImg.src = ''; }, 300);
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
-    });
-  </script>
 </body>
 </html>
