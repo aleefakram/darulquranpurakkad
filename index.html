@@ -24,8 +24,12 @@
   <meta property="og:image" content="https://darulquranpurakkad.netlify.app/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='36'>DQP</text></svg>" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,9 +74,11 @@
   <header class="header" role="banner">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Darul Qur'an Purakkad - Home">
-        <img class="logo-img" src="assets/logo.png" alt="Darul Qur'an Purakkad logo" width="40" height="40"
-          decoding="async"
-          data-fallback="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjM2Ij5EUVA8L3RleHQ+PC9zdmc+" />
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp" />
+          <img class="logo-img" src="assets/logo.png" alt="Darul Qur'an Purakkad logo" width="40" height="40"
+            decoding="async" loading="eager" />
+        </picture>
         <span>Darul Qur'an Purakkad</span>
       </a>
 

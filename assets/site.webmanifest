@@ -1,0 +1,28 @@
+{
+  "name": "Darul Quran Purakkad",
+  "short_name": "DQ Purakkad",
+  "description": "Integrated Quran & Contemporary Studies - Islamic Educational Institution",
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#064E3B",
+  "background_color": "#FDFCF5"
+}
