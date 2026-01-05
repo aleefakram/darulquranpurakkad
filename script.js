@@ -11,7 +11,7 @@
     html.classList.toggle("dark", dark);
     themeIcon.innerHTML = `<path d="${dark ? sunPath : moonPath}"></path>`;
     themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch {}
+    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch { }
   }
 
   const stored = (() => { try { return localStorage.getItem("theme"); } catch { return null; } })();
@@ -81,10 +81,10 @@
     function isValidMobile(phone) {
       // Remove all spaces, dashes, and parentheses
       const cleaned = phone.replace(/[\s\-\(\)]/g, '');
-      
+
       // Indian mobile: +91 followed by 10 digits starting with 6-9
       const indianPattern = /^\+91[6-9]\d{9}$/;
-      
+
       // GCC patterns:
       // UAE: +971 followed by 9 digits
       // Saudi Arabia: +966 followed by 9 digits  
@@ -98,14 +98,14 @@
       const qatarPattern = /^\+974\d{8}$/;
       const bahrainPattern = /^\+973\d{8}$/;
       const omanPattern = /^\+968\d{8}$/;
-      
+
       return indianPattern.test(cleaned) ||
-             uaePattern.test(cleaned) ||
-             saudiPattern.test(cleaned) ||
-             kuwaitPattern.test(cleaned) ||
-             qatarPattern.test(cleaned) ||
-             bahrainPattern.test(cleaned) ||
-             omanPattern.test(cleaned);
+        uaePattern.test(cleaned) ||
+        saudiPattern.test(cleaned) ||
+        kuwaitPattern.test(cleaned) ||
+        qatarPattern.test(cleaned) ||
+        bahrainPattern.test(cleaned) ||
+        omanPattern.test(cleaned);
     }
 
     form.addEventListener("submit", (e) => {
@@ -127,14 +127,14 @@
       if (!emailOk) { showError(emailInput, emailError, "Please enter a valid email."); valid = false; }
       else { clearError(emailInput, emailError); }
 
-      if (!mobileInput.value.trim()) { 
-        showError(mobileInput, mobileError, "Please enter your mobile number."); 
-        valid = false; 
-      } else if (!isValidMobile(mobileInput.value)) { 
-        showError(mobileInput, mobileError, "Please enter a valid Indian or GCC mobile number (e.g., +91 98765 43210)."); 
-        valid = false; 
-      } else { 
-        clearError(mobileInput, mobileError); 
+      if (!mobileInput.value.trim()) {
+        showError(mobileInput, mobileError, "Please enter your mobile number.");
+        valid = false;
+      } else if (!isValidMobile(mobileInput.value)) {
+        showError(mobileInput, mobileError, "Please enter a valid Indian or GCC mobile number (e.g., +91 98765 43210).");
+        valid = false;
+      } else {
+        clearError(mobileInput, mobileError);
       }
 
       if (!messageInput.value.trim()) { showError(messageInput, messageError, "Please enter a message."); valid = false; }
@@ -210,5 +210,33 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && lightbox?.classList.contains("active")) closeLightbox();
+  });
+
+  // UPI QR Code Modal
+  const qrModal = document.getElementById("upiQrModal");
+  const qrModalClose = document.getElementById("qrModalClose");
+  const upiQrBtn = document.getElementById("upiQrBtn");
+  let lastQrActiveEl = null;
+
+  function openQrModal(triggerEl) {
+    lastQrActiveEl = triggerEl || document.activeElement;
+    qrModal?.classList.add("active");
+    document.body.style.overflow = "hidden";
+    qrModalClose?.focus();
+  }
+
+  function closeQrModal() {
+    qrModal?.classList.remove("active");
+    document.body.style.overflow = "";
+    if (lastQrActiveEl && typeof lastQrActiveEl.focus === "function") lastQrActiveEl.focus();
+  }
+
+  upiQrBtn?.addEventListener("click", () => openQrModal(upiQrBtn));
+  qrModalClose?.addEventListener("click", closeQrModal);
+  qrModal?.addEventListener("click", (e) => {
+    if (e.target === qrModal) closeQrModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && qrModal?.classList.contains("active")) closeQrModal();
   });
 })();

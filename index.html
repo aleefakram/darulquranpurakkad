@@ -400,7 +400,43 @@
             <strong>Sponsor Students:</strong> ₹30,000/year per student • <strong>Daily Food:</strong> ₹12,000 •
             <strong>Monthly Subscription:</strong> ₹1,000
           </p>
-          <a href="#contact" class="btn-secondary donation-btn">Contact Us to Donate</a>
+
+          <div class="donation-methods">
+            <button class="btn-secondary donation-btn" id="upiQrBtn" type="button">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M3 4v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8l-6-6H5c-1.1 0-2 .9-2 2zm12 0v4h4l-4-4zM7 17h10v-2H7v2zm0-4h10v-2H7v2zm0-4h7V7H7v2z" />
+              </svg>
+              Donate via UPI
+            </button>
+            <a href="#contact" class="btn-secondary donation-btn">Contact Us to Donate</a>
+          </div>
+
+          <div class="bank-details">
+            <h4 class="bank-details-title">Bank Transfer Details</h4>
+            <div class="bank-info-grid">
+              <div class="bank-info-item">
+                <span class="bank-label">Account Name:</span>
+                <span class="bank-value">DARUL QUR'AN PURAKKAD</span>
+              </div>
+              <div class="bank-info-item">
+                <span class="bank-label">Account Number:</span>
+                <span class="bank-value">17730200000399</span>
+              </div>
+              <div class="bank-info-item">
+                <span class="bank-label">IFSC Code:</span>
+                <span class="bank-value">FDRL0001773</span>
+              </div>
+              <div class="bank-info-item">
+                <span class="bank-label">Bank:</span>
+                <span class="bank-value">FEDERAL BANK</span>
+              </div>
+              <div class="bank-info-item">
+                <span class="bank-label">Branch:</span>
+                <span class="bank-value">PAYYOLI</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -597,6 +633,19 @@
   <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image view">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close image" type="button">&times;</button>
     <img id="lightboxImg" class="lightbox-content" src="" alt="" />
+  </div>
+
+  <!-- UPI QR Code Modal -->
+  <div id="upiQrModal" class="qr-modal" role="dialog" aria-modal="true" aria-label="UPI QR Code">
+    <div class="qr-modal-content">
+      <button class="qr-modal-close" id="qrModalClose" aria-label="Close QR code" type="button">&times;</button>
+      <h3 class="qr-modal-title">Scan QR Code to Donate</h3>
+      <p class="qr-modal-subtitle">Use any UPI app to scan and donate</p>
+      <div class="qr-code-container">
+        <img src="assets/upi_qr.svg" alt="UPI QR Code for Darul Quran Purakkad" class="qr-code-image" />
+      </div>
+      <p class="qr-modal-hint">Supports Google Pay, PhonePe, Paytm, and all UPI apps</p>
+    </div>
   </div>
 </body>
 
