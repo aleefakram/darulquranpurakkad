@@ -382,7 +382,7 @@ img {
 
 /* Institution Name - Islamic Themed Animated Heading */
 .hero .institution-name {
-  font-family: 'Aref Ruqaa', 'Amiri', serif !important;
+  font-family: 'Reem Kufi', 'Aref Ruqaa', 'Amiri', serif !important;
   font-size: clamp(2.5rem, 12vw, 8rem) !important;
   font-weight: 700 !important;
   letter-spacing: 0.03em;
@@ -393,49 +393,9 @@ img {
   padding: 0 1rem;
   opacity: 1 !important;
   max-width: none !important;
-  text-shadow: 0 0 10px rgba(252, 211, 77, 0.5),
-    0 0 20px rgba(252, 211, 77, 0.3),
-    0 0 30px rgba(252, 211, 77, 0.2);
-  -webkit-animation: glow 2.5s ease-in-out infinite, fadeDown 1s ease-out !important;
-  animation: glow 2.5s ease-in-out infinite, fadeDown 1s ease-out !important;
-}
-
-@-webkit-keyframes glow {
-
-  0%,
-  100% {
-    text-shadow:
-      0 0 10px rgba(252, 211, 77, 0.5),
-      0 0 20px rgba(252, 211, 77, 0.3),
-      0 0 30px rgba(252, 211, 77, 0.2);
-  }
-
-  50% {
-    text-shadow:
-      0 0 20px rgba(252, 211, 77, 0.8),
-      0 0 40px rgba(252, 211, 77, 0.6),
-      0 0 60px rgba(252, 211, 77, 0.4),
-      0 0 80px rgba(252, 211, 77, 0.2);
-  }
-}
-
-@keyframes glow {
-
-  0%,
-  100% {
-    text-shadow:
-      0 0 10px rgba(252, 211, 77, 0.5),
-      0 0 20px rgba(252, 211, 77, 0.3),
-      0 0 30px rgba(252, 211, 77, 0.2);
-  }
-
-  50% {
-    text-shadow:
-      0 0 20px rgba(252, 211, 77, 0.8),
-      0 0 40px rgba(252, 211, 77, 0.6),
-      0 0 60px rgba(252, 211, 77, 0.4),
-      0 0 80px rgba(252, 211, 77, 0.2);
-  }
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  -webkit-animation: fadeDown 1s ease-out !important;
+  animation: fadeDown 1s ease-out !important;
 }
 
 @-webkit-keyframes fadeDown {
@@ -1207,4 +1167,38 @@ img {
   html {
     scroll-behavior: auto
   }
+}
+
+/* Footer Socials */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-link:hover {
+  background: var(--secondary);
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
 }
