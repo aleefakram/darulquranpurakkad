@@ -50,10 +50,12 @@
   if (form) {
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
+    const mobileInput = document.getElementById("mobile");
     const messageInput = document.getElementById("message");
 
     const nameError = document.getElementById("nameError");
     const emailError = document.getElementById("emailError");
+    const mobileError = document.getElementById("mobileError");
     const messageError = document.getElementById("messageError");
 
     const formSuccess = document.getElementById("formSuccess");
@@ -75,6 +77,37 @@
       }
     }
 
+    // Validate Indian and GCC mobile numbers
+    function isValidMobile(phone) {
+      // Remove all spaces, dashes, and parentheses
+      const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+      
+      // Indian mobile: +91 followed by 10 digits starting with 6-9
+      const indianPattern = /^\+91[6-9]\d{9}$/;
+      
+      // GCC patterns:
+      // UAE: +971 followed by 9 digits
+      // Saudi Arabia: +966 followed by 9 digits  
+      // Kuwait: +965 followed by 8 digits
+      // Qatar: +974 followed by 8 digits
+      // Bahrain: +973 followed by 8 digits
+      // Oman: +968 followed by 8 digits
+      const uaePattern = /^\+971\d{9}$/;
+      const saudiPattern = /^\+966\d{9}$/;
+      const kuwaitPattern = /^\+965\d{8}$/;
+      const qatarPattern = /^\+974\d{8}$/;
+      const bahrainPattern = /^\+973\d{8}$/;
+      const omanPattern = /^\+968\d{8}$/;
+      
+      return indianPattern.test(cleaned) ||
+             uaePattern.test(cleaned) ||
+             saudiPattern.test(cleaned) ||
+             kuwaitPattern.test(cleaned) ||
+             qatarPattern.test(cleaned) ||
+             bahrainPattern.test(cleaned) ||
+             omanPattern.test(cleaned);
+    }
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -93,6 +126,16 @@
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
       if (!emailOk) { showError(emailInput, emailError, "Please enter a valid email."); valid = false; }
       else { clearError(emailInput, emailError); }
+
+      if (!mobileInput.value.trim()) { 
+        showError(mobileInput, mobileError, "Please enter your mobile number."); 
+        valid = false; 
+      } else if (!isValidMobile(mobileInput.value)) { 
+        showError(mobileInput, mobileError, "Please enter a valid Indian or GCC mobile number (e.g., +91 98765 43210)."); 
+        valid = false; 
+      } else { 
+        clearError(mobileInput, mobileError); 
+      }
 
       if (!messageInput.value.trim()) { showError(messageInput, messageError, "Please enter a message."); valid = false; }
       else { clearError(messageInput, messageError); }

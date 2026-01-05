@@ -380,6 +380,52 @@ img {
   text-shadow: 0 2px 4px rgba(0, 0, 0, .30);
 }
 
+/* Institution Name - Islamic Themed Animated Heading */
+.hero .institution-name {
+  font-family: 'Aref Ruqaa', 'Amiri', serif !important;
+  font-size: clamp(2.5rem, 12vw, 8rem) !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  color: #FCD34D !important;
+  display: inline-block;
+  padding: 0 1rem;
+  opacity: 1 !important;
+  max-width: none;
+  animation: glow 2.5s ease-in-out infinite, fadeDown 1s ease-out;
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px rgba(252, 211, 77, 0.5),
+      0 0 20px rgba(252, 211, 77, 0.3),
+      0 0 30px rgba(252, 211, 77, 0.2);
+  }
+
+  50% {
+    text-shadow:
+      0 0 20px rgba(252, 211, 77, 0.8),
+      0 0 40px rgba(252, 211, 77, 0.6),
+      0 0 60px rgba(252, 211, 77, 0.4),
+      0 0 80px rgba(252, 211, 77, 0.2);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero p {
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 300;
@@ -1010,6 +1056,12 @@ img {
 
 .form-error.show {
   display: block
+}
+
+.form-hint {
+  color: var(--muted);
+  font-size: .8125rem;
+  margin-top: .375rem;
 }
 
 .form-fail {
