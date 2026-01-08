@@ -45,6 +45,196 @@
     }, { once: true });
   });
 
+  // Gallery Tabs
+  const galleryTabs = document.querySelectorAll(".gallery-tab");
+  const galleryPanels = document.querySelectorAll(".gallery-panel");
+
+  galleryTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Update tabs
+      galleryTabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+
+      // Update panels
+      const targetId = tab.getAttribute("aria-controls");
+      galleryPanels.forEach((panel) => {
+        if (panel.id === targetId) {
+          panel.classList.add("active");
+          panel.removeAttribute("hidden");
+        } else {
+          panel.classList.remove("active");
+          panel.setAttribute("hidden", "");
+        }
+      });
+    });
+  });
+
+  // Dynamic Gallery Loading
+  const galleryGrid = document.getElementById("galleryGrid");
+  const eventsGrid = document.getElementById("eventsGrid");
+
+  // Gallery file manifest (updated when CMS adds images)
+  const galleryFiles = [
+    "_data/gallery/classroom-session.json",
+    "_data/gallery/mosque-area.json",
+    "_data/gallery/library.json",
+    "_data/gallery/student-studying.json"
+  ];
+
+  const eventFiles = [
+    "_data/events/sample-event-2024.json"
+  ];
+
+  // Helper to create gallery item HTML
+  function createGalleryItem(item) {
+    const div = document.createElement("div");
+    div.className = "gallery-item";
+    div.setAttribute("role", "button");
+    div.setAttribute("tabindex", "0");
+    div.setAttribute("data-full", item.image);
+    div.setAttribute("data-alt", item.alt || item.title);
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.alt || item.title}" loading="lazy" decoding="async" />
+      <div class="gallery-overlay" aria-hidden="true">
+        <svg class="zoom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+        </svg>
+      </div>
+    `;
+    return div;
+  }
+
+  // Helper to create event card HTML
+  function createEventCard(event) {
+    const div = document.createElement("div");
+    div.className = "event-card";
+    div.setAttribute("role", "button");
+    div.setAttribute("tabindex", "0");
+    const date = new Date(event.date).toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+    const imageCount = event.images?.length || 0;
+    div.innerHTML = `
+      <img src="${event.cover}" alt="${event.title}" class="event-card-image" loading="lazy" />
+      <div class="event-card-content">
+        <h3 class="event-card-title">${event.title}</h3>
+        <p class="event-card-date">${date}</p>
+        <p class="event-card-count">${imageCount} photo${imageCount !== 1 ? "s" : ""}</p>
+      </div>
+    `;
+    // Click to open event lightbox gallery
+    div.addEventListener("click", () => openEventGallery(event));
+    div.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openEventGallery(event);
+      }
+    });
+    return div;
+  }
+
+  // Load general gallery
+  async function loadGallery() {
+    if (!galleryGrid) return;
+    
+    try {
+      const items = [];
+      for (const file of galleryFiles) {
+        try {
+          const res = await fetch("/" + file);
+          if (res.ok) {
+            const data = await res.json();
+            items.push(data);
+          }
+        } catch { }
+      }
+      
+      // Sort by order
+      items.sort((a, b) => (a.order || 0) - (b.order || 0));
+      
+      if (items.length > 0) {
+        galleryGrid.innerHTML = "";
+        items.forEach((item) => {
+          const el = createGalleryItem(item);
+          galleryGrid.appendChild(el);
+          // Bind lightbox
+          bindGalleryItemLightbox(el);
+        });
+      }
+    } catch (err) {
+      console.error("Failed to load gallery:", err);
+    }
+  }
+
+  // Load events
+  async function loadEvents() {
+    if (!eventsGrid) return;
+    
+    try {
+      const events = [];
+      for (const file of eventFiles) {
+        try {
+          const res = await fetch("/" + file);
+          if (res.ok) {
+            const data = await res.json();
+            events.push(data);
+          }
+        } catch { }
+      }
+      
+      // Sort by date (newest first)
+      events.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+      if (events.length > 0) {
+        eventsGrid.innerHTML = "";
+        events.forEach((event) => {
+          eventsGrid.appendChild(createEventCard(event));
+        });
+      } else {
+        eventsGrid.innerHTML = '<p class="gallery-loading">No events yet. Check back soon!</p>';
+      }
+    } catch (err) {
+      console.error("Failed to load events:", err);
+    }
+  }
+
+  // Event gallery viewer
+  let currentEventImages = [];
+  let currentEventIndex = 0;
+
+  function openEventGallery(event) {
+    if (!event.images || event.images.length === 0) return;
+    currentEventImages = event.images;
+    currentEventIndex = 0;
+    openLightbox(event.images[0].src, event.images[0].alt);
+  }
+
+  // Helper to bind lightbox to dynamically created items
+  function bindGalleryItemLightbox(item) {
+    const img = item.querySelector("img");
+    const src = item.getAttribute("data-full") || img?.getAttribute("src");
+    const alt = item.getAttribute("data-alt") || img?.getAttribute("alt") || "Image";
+    
+    item.addEventListener("click", () => openLightbox(src, alt, item));
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(src, alt, item);
+      }
+    });
+  }
+
+  // Initialize galleries
+  loadGallery();
+  loadEvents();
+
   // Netlify Form (AJAX + validation)
   const form = document.getElementById("contactForm");
   if (form) {

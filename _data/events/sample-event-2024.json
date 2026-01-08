@@ -1,0 +1,16 @@
+{
+    "title": "Sample Event 2024",
+    "date": "2024-01-15",
+    "description": "This is a sample event to demonstrate the gallery structure. Delete this and create real events.",
+    "cover": "/assets/gallery-1.jpg",
+    "images": [
+        {
+            "src": "/assets/gallery-1.jpg",
+            "alt": "Event photo 1"
+        },
+        {
+            "src": "/assets/gallery-2.jpg",
+            "alt": "Event photo 2"
+        }
+    ]
+}

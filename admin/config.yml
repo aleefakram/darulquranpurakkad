@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files location
+media_folder: "assets/gallery"
+public_folder: "/assets/gallery"
+
+# Netlify Identity
+site_url: https://darulquranpurakkad.netlify.app
+display_url: https://darulquranpurakkad.netlify.app
+logo_url: https://darulquranpurakkad.netlify.app/assets/logo.png
+
+# Locale
+locale: "en"
+
+collections:
+  # General Gallery
+  - name: "gallery"
+    label: "General Gallery"
+    label_singular: "Image"
+    description: "Campus life, facilities, and general photos"
+    folder: "_data/gallery"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: true }
+      - { label: "Alt Text", name: "alt", widget: "string", hint: "Describe the image for accessibility" }
+      - { label: "Order", name: "order", widget: "number", default: 0, hint: "Lower numbers appear first" }
+
+  # Event Galleries
+  - name: "events"
+    label: "Event Galleries"
+    label_singular: "Event"
+    description: "Create event galleries with multiple photos"
+    folder: "_data/events"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Event Name", name: "title", widget: "string" }
+      - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Cover Image", name: "cover", widget: "image", required: true, hint: "Main image shown in gallery preview" }
+      - label: "Gallery Images"
+        name: "images"
+        widget: "list"
+        summary: "{{fields.alt}}"
+        fields:
+          - { label: "Image", name: "src", widget: "image" }
+          - { label: "Caption", name: "alt", widget: "string" }
