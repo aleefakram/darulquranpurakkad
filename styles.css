@@ -995,6 +995,18 @@ img {
   text-decoration: underline
 }
 
+/* Map Container */
+.map-container {
+  margin-top: 1.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.map-container iframe {
+  display: block;
+}
+
 /* Form */
 .contact-form {
   background: var(--bg);
