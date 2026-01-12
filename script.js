@@ -45,6 +45,127 @@
     }, { once: true });
   });
 
+  // Gallery Carousel - Responsive (3 desktop, 2 tablet, 1 mobile)
+  const galleryCarousel = document.getElementById("galleryCarousel");
+  const galleryGrid = document.getElementById("galleryGrid");
+  const carouselPrev = document.getElementById("carouselPrev");
+  const carouselNext = document.getElementById("carouselNext");
+  const carouselDots = document.getElementById("carouselDots");
+
+  if (galleryGrid && galleryCarousel) {
+    const items = galleryGrid.querySelectorAll(".gallery-item");
+    const totalItems = items.length;
+    let currentPage = 0;
+
+    // Get items per view based on screen width
+    function getItemsPerView() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    }
+
+    // Calculate total pages
+    function getTotalPages() {
+      const itemsPerView = getItemsPerView();
+      return Math.ceil(totalItems / itemsPerView);
+    }
+
+    // Create/update dots
+    function createDots() {
+      if (!carouselDots) return;
+      carouselDots.innerHTML = '';
+      const totalPages = getTotalPages();
+
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.classList.add("carousel-dot");
+        if (i === 0) dot.classList.add("active");
+        dot.setAttribute("aria-label", `Go to page ${i + 1}`);
+        dot.addEventListener("click", () => goToPage(i));
+        carouselDots.appendChild(dot);
+      }
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+      const itemsPerView = getItemsPerView();
+      const gap = 16; // 1rem gap in pixels
+      const containerWidth = galleryCarousel.offsetWidth;
+      const itemWidth = (containerWidth - (gap * (itemsPerView - 1))) / itemsPerView;
+      const translateX = -currentPage * (itemWidth + gap) * itemsPerView;
+
+      galleryGrid.style.transform = `translateX(${translateX}px)`;
+
+      // Update dots
+      document.querySelectorAll(".carousel-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentPage);
+      });
+    }
+
+    function goToPage(index) {
+      const totalPages = getTotalPages();
+      currentPage = Math.max(0, Math.min(index, totalPages - 1));
+      updateCarousel();
+    }
+
+    function nextPage() {
+      const totalPages = getTotalPages();
+      currentPage = (currentPage + 1) % totalPages;
+      updateCarousel();
+    }
+
+    function prevPage() {
+      const totalPages = getTotalPages();
+      currentPage = (currentPage - 1 + totalPages) % totalPages;
+      updateCarousel();
+    }
+
+    // Event listeners
+    carouselNext?.addEventListener("click", nextPage);
+    carouselPrev?.addEventListener("click", prevPage);
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    galleryCarousel.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    galleryCarousel.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextPage();
+        else prevPage();
+      }
+    }, { passive: true });
+
+    // Keyboard navigation
+    galleryCarousel.setAttribute("tabindex", "0");
+    galleryCarousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") prevPage();
+      if (e.key === "ArrowRight") nextPage();
+    });
+
+    // Handle resize
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const totalPages = getTotalPages();
+        if (currentPage >= totalPages) {
+          currentPage = totalPages - 1;
+        }
+        createDots();
+        updateCarousel();
+      }, 150);
+    });
+
+    // Initialize
+    createDots();
+    updateCarousel();
+  }
+
   // Netlify Form (AJAX + validation)
   const form = document.getElementById("contactForm");
   if (form) {
