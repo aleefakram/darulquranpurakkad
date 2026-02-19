@@ -1398,6 +1398,136 @@ img {
   letter-spacing: 0.5px;
 }
 
+/* Donation Disclaimer */
+.donation-disclaimer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: .75rem;
+  opacity: .6;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Privacy Policy Page */
+.privacy-content {
+  max-width: 52rem;
+  margin: 2rem auto 0;
+}
+
+.privacy-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--secondary);
+}
+
+.privacy-card h2 {
+  font-size: 1.375rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-family: 'Aref Ruqaa', 'Amiri', serif;
+}
+
+.dark .privacy-card h2 {
+  color: var(--accent);
+}
+
+.privacy-card p {
+  margin-bottom: .75rem;
+  line-height: 1.7;
+}
+
+.privacy-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: .75rem;
+}
+
+.privacy-card li {
+  margin-bottom: .5rem;
+  line-height: 1.6;
+}
+
+.privacy-card a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-card a:hover {
+  text-decoration: underline;
+}
+
+.privacy-card code {
+  background: rgba(0, 0, 0, .06);
+  padding: .15rem .4rem;
+  border-radius: .25rem;
+  font-size: .9em;
+}
+
+.dark .privacy-card code {
+  background: rgba(255, 255, 255, .1);
+}
+
+.privacy-service {
+  background: var(--bg);
+  border-radius: .75rem;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.privacy-service h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
+
+.dark .privacy-service h3 {
+  color: var(--accent);
+}
+
+.privacy-service p {
+  margin-bottom: 0;
+  font-size: .9375rem;
+  color: var(--muted);
+}
+
+/* Footer Links */
+.footer-link {
+  color: rgba(255, 255, 255, .7);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.footer-link:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Form Consent */
+.form-consent {
+  font-size: .8125rem;
+  color: var(--muted);
+  margin-top: .75rem;
+  line-height: 1.5;
+}
+
+.form-consent a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-consent a:hover {
+  text-decoration: underline;
+}
+
 /* QR Code Modal */
 .qr-modal {
   position: fixed;
