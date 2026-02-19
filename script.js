@@ -360,4 +360,8 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && qrModal?.classList.contains("active")) closeQrModal();
   });
+
+  // Dynamic footer year
+  const footerYear = document.getElementById("footerYear");
+  if (footerYear) footerYear.textContent = new Date().getFullYear();
 })();

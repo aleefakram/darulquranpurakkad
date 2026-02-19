@@ -1500,9 +1500,10 @@ img {
 
 /* Footer Links */
 .footer-link {
-  color: rgba(255, 255, 255, .7);
+  color: var(--accent);
   text-decoration: none;
   transition: color .2s;
+  font-weight: 500;
 }
 
 .footer-link:hover {
