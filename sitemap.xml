@@ -2,8 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://darulquranpurakkad.netlify.app/</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://darulquranpurakkad.netlify.app/privacy-policy.html</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://darulquranpurakkad.netlify.app/terms-and-conditions.html</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://darulquranpurakkad.netlify.app/refund-policy.html</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://darulquranpurakkad.netlify.app/disclaimer.html</loc>
+    <lastmod>2026-02-26</lastmod>
   </url>
 </urlset>
