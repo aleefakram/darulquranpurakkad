@@ -7,7 +7,7 @@ Static landing site for Darul Qur'an Purakkad (HTML + assets only).
 - assets/: static images
 - netlify.toml: Netlify config for static hosting, SPA fallback, caching
 - .netlify/: Netlify CLI state (ignored)
-- Canonical/OG meta in `index.html` points to `https://darulquranpurakkad.netlify.app/`; update if you use a custom domain.
+- Canonical/OG meta in `index.html` points to `https://darulquranpurakkad.com/`; update if you use a custom domain.
 
 ## Deploy on Netlify (dashboard)
 1. Push this repo to GitHub/GitLab/Bitbucket.

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://darulquranpurakkad.netlify.app/sitemap.xml
+Sitemap: https://darulquranpurakkad.com/sitemap.xml
